@@ -1,7 +1,6 @@
 using Xunit;
-using Day1;
 
-namespace Day1Tests;
+namespace Aoc;
 
 public class DepthComparatorTest
 {

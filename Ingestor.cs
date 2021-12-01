@@ -1,4 +1,8 @@
-namespace Core;
+using System.Collections.Generic;
+using System.IO;
+
+namespace Aoc;
+
 public class Ingestor
 {
 	// <summary>
