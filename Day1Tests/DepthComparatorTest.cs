@@ -1,0 +1,15 @@
+using Xunit;
+using Day1;
+
+namespace Day1Tests;
+
+public class DepthComparatorTest
+{
+    [Fact]
+    public void TestCountIncreases()
+    {
+		int[] input = { 199, 200, 208, 210, 200, 207, 240, 269, 260, 263 };
+		var service = new DepthComparator();
+		Assert.Equal(7, service.CountIncreases(input));
+	}
+}
