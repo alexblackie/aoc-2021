@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Aoc;
 
@@ -18,5 +19,12 @@ public class Ingestor
 				yield return line;
 			}
 		}
+	}
+
+	public int[] ReadNumbers(string name)
+	{
+		return Read(name)
+			.Select(line => int.Parse(line))
+			.ToArray();
 	}
 }
