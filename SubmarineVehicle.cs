@@ -12,10 +12,10 @@ public class SubmarineVehicle
 
 	public void Move(DirectionChange cmd)
 	{
-		if (cmd.Forward != 0) X += cmd.Forward;
-		if (cmd.Reverse != 0) X -= cmd.Reverse;
-		if (cmd.Up != 0)      Z -= cmd.Up;
-		if (cmd.Down != 0)    Z += cmd.Down;
+		X += cmd.Forward;
+		X -= cmd.Reverse;
+		Z -= cmd.Up;
+		Z += cmd.Down;
 	}
 
 	public void Move(List<DirectionChange> cmds)
