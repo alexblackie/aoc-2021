@@ -5,6 +5,8 @@
 These are my solutions to the [Advent of Code 2021][0] challenges. This year I
 chose to use it as an opportunity to gain more experience with .NET and C#.
 
+[0]: https://adventofcode.com/2021
+
 ## Development
 
 Install the .NET Core 6 SDK, and then you can:
