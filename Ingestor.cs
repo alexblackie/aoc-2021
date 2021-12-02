@@ -27,4 +27,9 @@ public class Ingestor
 			.Select(line => int.Parse(line))
 			.ToArray();
 	}
+
+	public List<DirectionChange> ReadDirectionChanges(string name)
+	{
+		return Read(name).Select(line => DirectionChange.Parse(line)).ToList();
+	}
 }
