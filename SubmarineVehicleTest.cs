@@ -88,4 +88,19 @@ public class SubmarineVehicleTest
 		Assert.Equal(15, sub.X);
 		Assert.Equal(60, sub.Z);
 	}
+
+	[Fact]
+	public void TestResetClearsValues()
+	{
+		var sub = new SubmarineVehicle() { X = 5, Z = 8, Aim = 123 };
+		Assert.Equal(123, sub.Aim);
+		Assert.Equal(5, sub.X);
+		Assert.Equal(8, sub.Z);
+
+		sub.Reset();
+
+		Assert.Equal(0, sub.Aim);
+		Assert.Equal(0, sub.X);
+		Assert.Equal(0, sub.Y);
+	}
 }
