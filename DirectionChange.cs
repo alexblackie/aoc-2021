@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace Aoc;
 
 public record DirectionChange
