@@ -1,11 +1,14 @@
 namespace Aoc;
 
+/// <summary>
+/// Service to map increases from radar telemetry logs.
+/// </summary>
 public class DepthComparator
 {
-	// <summary>
-	// Return the number of depth measurements that are increases from the
-	// previously-measured value.
-	// </summary>
+	/// <summary>
+	/// Return the number of depth measurements that are increases from the
+	/// previously-measured value.
+	/// </summary>
 	public int CountIncreases(int[] depths)
 	{
 		int count = 0;
@@ -22,6 +25,10 @@ public class DepthComparator
 		return count;
 	}
 
+	/// <summary>
+	/// Use a three-element sliding window to compare depths, only counting an
+	/// increase if the sum of the window's elements has increased.
+	/// </summary>
 	public int CountIncreasesThrice(int[] depths)
 	{
 		int count = 0;
