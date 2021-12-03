@@ -4,25 +4,25 @@ namespace Aoc;
 
 class Program
 {
+	private static Ingestor ingestor = new Ingestor();
+	private static DepthComparator depthComparator = new DepthComparator();
+	private static SubmarineVehicle submarineVehicle = new SubmarineVehicle();
+
     static void Main(string[] args)
     {
-		var ingestor = new Ingestor();
-
 		// Day 1
 		int[] input = ingestor.ReadNumbers("Inputs/Day1-1.txt");
-		var depth = new DepthComparator();
-		Console.WriteLine($"Day 1: {depth.CountIncreases(input)}");
-		Console.WriteLine($"Day 1.1: {depth.CountIncreasesThrice(input)}");
+		Console.WriteLine($"Day 1: {depthComparator.CountIncreases(input)}");
+		Console.WriteLine($"Day 1.1: {depthComparator.CountIncreasesThrice(input)}");
 
 		// Day 2: Part 1
-		var sub = new SubmarineVehicle();
 		var directions = ingestor.ReadDirectionChanges("Inputs/Day2.txt");
-		sub.SimpleMove(directions);
-		Console.WriteLine($"Day 2: X:{sub.X} Z:{sub.Z} Product:{sub.X * sub.Z}");
-		sub.Reset();
+		submarineVehicle.SimpleMove(directions);
+		Console.WriteLine($"Day 2: (X)(Z):{submarineVehicle.X * submarineVehicle.Z}");
+		submarineVehicle.Reset();
 
 		// Day 2: Part2
-		sub.Move(directions);
-		Console.WriteLine($"Day 2.1: X:{sub.X} Z:{sub.Z} Product:{sub.X * sub.Z}");
+		submarineVehicle.Move(directions);
+		Console.WriteLine($"Day 2.1: (X)(Z):{submarineVehicle.X * submarineVehicle.Z}");
 	}
 }
