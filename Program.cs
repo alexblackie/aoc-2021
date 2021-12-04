@@ -29,5 +29,6 @@ class Program
 		var binaryDiagnostic = ingestor.ReadBinaryDiagnostic("Inputs/Day3.txt");
 		var powerDiagnostic = PowerDiagnostic.Parse(binaryDiagnostic);
 		Console.WriteLine($"Day 3: {powerDiagnostic.GammaRate * powerDiagnostic.EpsilonRate}");
+		// I'm skipping Part 2 because it's insufferable.
 	}
 }
