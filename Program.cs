@@ -24,5 +24,10 @@ class Program
 		// Day 2: Part2
 		submarineVehicle.Move(directions);
 		Console.WriteLine($"Day 2.1: (X)(Z):{submarineVehicle.X * submarineVehicle.Z}");
+
+		// Day 3
+		var binaryDiagnostic = ingestor.ReadBinaryDiagnostic("Inputs/Day3.txt");
+		var powerDiagnostic = PowerDiagnostic.Parse(binaryDiagnostic);
+		Console.WriteLine($"Day 3: {powerDiagnostic.GammaRate * powerDiagnostic.EpsilonRate}");
 	}
 }
