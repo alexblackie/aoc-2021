@@ -1,4 +1,5 @@
 using Xunit;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Aoc;
@@ -32,5 +33,30 @@ public class IngestorTest
 		};
 
 		Assert.Equal(expected, changes);
+	}
+
+	[Fact]
+	public void TestReadBinaryDiagnostic()
+	{
+		var service = new Ingestor();
+
+		List<BitArray> bits = service.ReadBinaryDiagnostic("../../../Fixtures/BinaryDiagnostic.txt");
+		List<BitArray> expected = new List<BitArray>()
+		{
+			new BitArray(new bool[] { false, false, true, false, false }),
+			new BitArray(new bool[] { true, true, true, true, false }),
+			new BitArray(new bool[] { true, false, true, true, false }),
+			new BitArray(new bool[] { true, false, true, true, true }),
+			new BitArray(new bool[] { true, false, true, false, true }),
+			new BitArray(new bool[] { false, true, true, true, true }),
+			new BitArray(new bool[] { false, false, true, true, true }),
+			new BitArray(new bool[] { true, true, true, false, false }),
+			new BitArray(new bool[] { true, false, false, false, false }),
+			new BitArray(new bool[] { true, true, false, false, true }),
+			new BitArray(new bool[] { false, false, false, true, false }),
+			new BitArray(new bool[] { false, true, false, true, false }),
+		};
+
+		Assert.Equal(expected, bits);
 	}
 }
