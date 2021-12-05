@@ -1,6 +1,8 @@
 using System;
+using Data;
+using Submarine;
 
-namespace Aoc;
+namespace Cmd;
 
 class Program
 {
@@ -11,12 +13,17 @@ class Program
     static void Main(string[] args)
     {
 		// Day 1
-		int[] input = ingestor.ReadNumbers("Inputs/Day1-1.txt");
+		// TODO: fix weird coupling with Data files
+		int[] input = ingestor.ReadNumbers("Data/Inputs/Day1-1.txt");
 		Console.WriteLine($"Day 1: {depthComparator.CountIncreases(input)}");
 		Console.WriteLine($"Day 1.1: {depthComparator.CountIncreasesThrice(input)}");
 
 		// Day 2: Part 1
-		var directions = ingestor.ReadDirectionChanges("Inputs/Day2.txt");
+		var directions = ingestor
+			.Read("Data/Inputs/Day2.txt")
+			.Select(line => DirectionChange.Parse(line))
+			.ToList();
+
 		submarineVehicle.SimpleMove(directions);
 		Console.WriteLine($"Day 2: (X)(Z):{submarineVehicle.X * submarineVehicle.Z}");
 		submarineVehicle.Reset();
@@ -26,7 +33,7 @@ class Program
 		Console.WriteLine($"Day 2.1: (X)(Z):{submarineVehicle.X * submarineVehicle.Z}");
 
 		// Day 3
-		var binaryDiagnostic = ingestor.ReadBinaryDiagnostic("Inputs/Day3.txt");
+		var binaryDiagnostic = ingestor.ReadBinary("Data/Inputs/Day3.txt");
 		var powerDiagnostic = PowerDiagnostic.Parse(binaryDiagnostic);
 		Console.WriteLine($"Day 3: {powerDiagnostic.GammaRate * powerDiagnostic.EpsilonRate}");
 		// I'm skipping Part 2 because it's insufferable.

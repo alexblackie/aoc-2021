@@ -1,4 +1,4 @@
-namespace Aoc;
+namespace Submarine;
 
 /// <summary>Record to hold details of a change in direction.</summary>
 public record DirectionChange

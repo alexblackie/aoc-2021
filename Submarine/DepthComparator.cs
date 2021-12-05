@@ -1,4 +1,4 @@
-namespace Aoc;
+namespace Submarine;
 
 /// <summary>
 /// Service to map increases from radar telemetry logs.

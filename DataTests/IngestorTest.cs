@@ -1,8 +1,9 @@
 using Xunit;
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 
-namespace Aoc;
+namespace DataTests;
 
 public class IngestorTest
 {
@@ -17,30 +18,11 @@ public class IngestorTest
 	}
 
 	[Fact]
-	public void TestReadDirectionChanges()
+	public void TestReadBinary()
 	{
 		var service = new Ingestor();
 
-		List<DirectionChange> changes = service.ReadDirectionChanges("../../../Fixtures/SubmarineControls.txt");
-		var expected = new List<DirectionChange>()
-		{
-			new DirectionChange() { Down = 0, Forward = 5, Reverse = 0, Up = 0 },
-			new DirectionChange() { Down = 5, Forward = 0, Reverse = 0, Up = 0 },
-			new DirectionChange() { Down = 0, Forward = 8, Reverse = 0, Up = 0 },
-			new DirectionChange() { Down = 0, Forward = 0, Reverse = 0, Up = 3 },
-			new DirectionChange() { Down = 8, Forward = 0, Reverse = 0, Up = 0 },
-			new DirectionChange() { Down = 0, Forward = 2, Reverse = 0, Up = 0 },
-		};
-
-		Assert.Equal(expected, changes);
-	}
-
-	[Fact]
-	public void TestReadBinaryDiagnostic()
-	{
-		var service = new Ingestor();
-
-		List<BitArray> bits = service.ReadBinaryDiagnostic("../../../Fixtures/BinaryDiagnostic.txt");
+		List<BitArray> bits = service.ReadBinary("../../../Fixtures/BinaryDiagnostic.txt");
 		List<BitArray> expected = new List<BitArray>()
 		{
 			new BitArray(new bool[] { false, false, true, false, false }),

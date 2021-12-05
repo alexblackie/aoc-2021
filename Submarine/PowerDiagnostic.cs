@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Aoc;
+namespace Submarine;
 
 /// <summary>
 /// Record to hold parsed power system diagnostic data. Supports parsing binary

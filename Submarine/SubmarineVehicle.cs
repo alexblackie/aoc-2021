@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Aoc;
+namespace Submarine;
 
 /// <summary>
 /// Represents the state of the submarine. Exposes a minimal API to control

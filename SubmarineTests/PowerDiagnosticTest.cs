@@ -1,8 +1,10 @@
 using Xunit;
 using System.Collections;
 using System.Collections.Generic;
+using Submarine;
+using Data;
 
-namespace Aoc;
+namespace SubmarineTests;
 
 public class PowerDiagnosticTest
 {
@@ -12,7 +14,8 @@ public class PowerDiagnosticTest
 	[Fact]
 	public void TestParse()
 	{
-		List<BitArray> measurements = _ingestor.ReadBinaryDiagnostic("../../../Fixtures/BinaryDiagnostic.txt");
+		// TODO: Fix this really awkward cross-package coupling. Need a test support library?
+		List<BitArray> measurements = _ingestor.ReadBinary("../../../../DataTests/Fixtures/BinaryDiagnostic.txt");
 		var record = PowerDiagnostic.Parse(measurements);
 
 		Assert.Equal(22, record.GammaRate);

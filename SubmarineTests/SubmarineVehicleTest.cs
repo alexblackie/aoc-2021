@@ -1,7 +1,8 @@
 using Xunit;
 using System.Collections.Generic;
+using Submarine;
 
-namespace Aoc;
+namespace SubmarineTests;
 
 public class SubmarineVehicleTest
 {

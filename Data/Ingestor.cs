@@ -3,7 +3,7 @@ using System.Collections;
 using System.IO;
 using System.Linq;
 
-namespace Aoc;
+namespace Data;
 
 /// <summary>
 /// Provides an API to read text files from disk and parse them in various ways
@@ -38,20 +38,10 @@ public class Ingestor
 	}
 
 	/// <summary>
-	/// Read the input file with the given name, and parse each line as a
-	/// "change of direction" command. Parses each into proper
-	/// <c>DirectionChange</c> records.
-	/// </summary>
-	public List<DirectionChange> ReadDirectionChanges(string name)
-	{
-		return Read(name).Select(line => DirectionChange.Parse(line)).ToList();
-	}
-
-	/// <summary>
 	/// Read the input file with the given name, and parse each line as a binary
 	/// value, storing each bit in a <c>BitArray</c>.
 	/// </summary>
-	public List<BitArray> ReadBinaryDiagnostic(string name)
+	public List<BitArray> ReadBinary(string name)
 	{
 		return Read(name).Select(line =>
 			new BitArray(line.ToCharArray().Select(c => c == '1').ToArray())

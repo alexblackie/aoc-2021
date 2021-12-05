@@ -1,6 +1,7 @@
 using Xunit;
+using Submarine;
 
-namespace Aoc;
+namespace SubmarineTests;
 
 public class DirectionChangeTest
 {
