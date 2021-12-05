@@ -29,3 +29,19 @@ There is a (hopefully) exhaustive xUnit unit test suite:
 ```
 $ dotnet test
 ```
+
+## Building a publishable release
+
+If, for whatever reason, you want to actually generate a runnable application from this, you can:
+
+```
+$ dotnet publish -c Release -r osx-arm64 -p:PublishReadyToRun=true
+```
+
+Just change `osx-arm64` to whatever target platform you want (eg., `win-x64`).
+
+You'll find the CLI entrypoint compiled as a self-contained binary:
+
+```
+$ ./Cmd/bin/Debug/net6.0/osx-arm64/publish/Cmd
+```
