@@ -7,6 +7,54 @@ namespace BingoTests;
 public class BoardTest
 {
 	[Fact]
+	public void TestBoardIsEqualWithIdenticalCells()
+	{
+		var board = new Board()
+		{
+			Cells = new List<List<Cell>>()
+			{
+				new List<Cell>()
+				{
+					new Cell() { Number = 6 },
+					new Cell() { Number = 1 },
+					new Cell() { Number = 8 },
+					new Cell() { Number = 10 },
+				},
+				new List<Cell>()
+				{
+					new Cell() { Number = 99 },
+					new Cell() { Number = 3 },
+					new Cell() { Number = 7 },
+					new Cell() { Number = 16 },
+				}
+			}
+		};
+
+		var otherBoard = new Board()
+		{
+			Cells = new List<List<Cell>>()
+			{
+				new List<Cell>()
+				{
+					new Cell() { Number = 6 },
+					new Cell() { Number = 1 },
+					new Cell() { Number = 8 },
+					new Cell() { Number = 10 },
+				},
+				new List<Cell>()
+				{
+					new Cell() { Number = 99 },
+					new Cell() { Number = 3 },
+					new Cell() { Number = 7 },
+					new Cell() { Number = 16 },
+				}
+			}
+		};
+
+		Assert.Equal(board, otherBoard);
+	}
+
+	[Fact]
 	public void TestIsBingoWithAFullRow()
 	{
 		var board = new Board()

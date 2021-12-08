@@ -1,8 +1,9 @@
+using System;
 using System.Collections.Generic;
 
 namespace Bingo;
 
-public class Board
+public class Board : IEquatable<Board>
 {
 	public List<List<Cell>> Cells = new List<List<Cell>>();
 
@@ -32,5 +33,19 @@ public class Board
 		}
 
 		return false;
+	}
+
+	public bool Equals(Board? other)
+	{
+		if (other == null) return false;
+
+		// If two boards have identical cells (includes marked values), then
+		// they are equivalent.
+		for (int rowIdx = 0; rowIdx < other.Cells.Count; rowIdx++)
+		{
+			if (!Cells[rowIdx].SequenceEqual(other.Cells[rowIdx])) return false;
+		}
+
+		return true;
 	}
 }
