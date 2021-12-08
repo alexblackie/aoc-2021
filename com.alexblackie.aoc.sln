@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{CA019FF9-68E3-4E4A-A7B6-C179E44644E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTests", "DataTests\DataTests.csproj", "{9533EC0F-C2C5-447C-BD7B-9BAB9CF54FE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingoTests", "BingoTests\BingoTests.csproj", "{DBD79F4B-00FD-4E2D-B076-128180811714}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bingo", "Bingo\Bingo.csproj", "{10B1359C-87FB-4D32-907C-0C9AAE522FD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,5 +46,13 @@ Global
 		{9533EC0F-C2C5-447C-BD7B-9BAB9CF54FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9533EC0F-C2C5-447C-BD7B-9BAB9CF54FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9533EC0F-C2C5-447C-BD7B-9BAB9CF54FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD79F4B-00FD-4E2D-B076-128180811714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD79F4B-00FD-4E2D-B076-128180811714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD79F4B-00FD-4E2D-B076-128180811714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD79F4B-00FD-4E2D-B076-128180811714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10B1359C-87FB-4D32-907C-0C9AAE522FD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B1359C-87FB-4D32-907C-0C9AAE522FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B1359C-87FB-4D32-907C-0C9AAE522FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B1359C-87FB-4D32-907C-0C9AAE522FD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
