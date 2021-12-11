@@ -47,4 +47,34 @@ public class Ingestor
 			new BitArray(line.ToCharArray().Select(c => c == '1').ToArray())
 		).ToList();
 	}
+
+	/// <summary>
+	/// Read the input file with the given name, and parse it as a bingo game
+	/// -- the first line being the draws, and the remaining being a series of
+	/// boards.
+	/// </summary>
+	public (List<int>, List<List<List<int>>>) ReadBingoGame(string name)
+	{
+		List<string> input = Read(name).Select(line => line).ToList();
+
+		// Pull the first line as the draws
+		var draws = input[0].Split(",").Select(number => int.Parse(number)).ToList();
+
+		// Join the remaining input into a string so we can split on the
+		// double-newlines to get each board out.
+		var boards = string.Join("\n", input.Skip(1))
+			.Split("\n\n")
+			.Select(textBoard =>
+					textBoard
+					.Split("\n")
+					.Where(cell => !string.IsNullOrWhiteSpace(cell))
+					.Select(line =>
+						line
+						.Split(" ")
+						.Where(cell => !string.IsNullOrWhiteSpace(cell))
+						.Select(cell => int.Parse(cell)).ToList()).ToList())
+			.ToList();
+
+		return (draws, boards);
+	}
 }
