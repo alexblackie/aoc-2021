@@ -19,4 +19,19 @@ public class Game
 	{
 		Boards.Add(board);
 	}
+
+	public Board? Draw(List<int> numbers)
+	{
+		foreach (var number in numbers)
+		{
+			foreach (var board in Boards)
+			{
+				board.MarkCell(number);
+				// if we get a bingo, return the first board that bingos
+				if (board.IsBingo()) return board;
+			}
+		}
+
+		return null;
+	}
 }
