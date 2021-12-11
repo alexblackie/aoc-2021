@@ -7,6 +7,17 @@ public class Board : IEquatable<Board>
 {
 	public List<List<Cell>> Cells = new List<List<Cell>>();
 
+	public static Board Parse(List<List<int>> rows)
+	{
+		return new Board()
+		{
+			Cells = rows.Select(row =>
+			{
+				return row.Select(number => new Cell() { Number = number }).ToList();
+			}).ToList()
+		};
+	}
+
 	public void MarkCell(int number)
 	{
 		foreach (var row in Cells)

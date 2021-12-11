@@ -155,4 +155,65 @@ public class BoardTest
 
 		Assert.False(board.IsBingo());
 	}
+
+	[Fact]
+	public void TestBoardParse()
+	{
+		var board = new List<List<int>>()
+		{
+			new List<int>() { 1, 2, 3, 4, 5 },
+			new List<int>() { 1, 2, 3, 4, 5 },
+			new List<int>() { 1, 2, 3, 4, 5 },
+			new List<int>() { 1, 2, 3, 4, 5 },
+			new List<int>() { 1, 2, 3, 4, 5 },
+		};
+
+		var expected = new Board()
+		{
+			Cells = new List<List<Cell>>()
+			{
+				new List<Cell>() {
+					new Cell() { Number = 1 },
+					new Cell() { Number = 2 },
+					new Cell() { Number = 3 },
+					new Cell() { Number = 4 },
+					new Cell() { Number = 5 },
+				},
+
+				new List<Cell>() {
+					new Cell() { Number = 1 },
+					new Cell() { Number = 2 },
+					new Cell() { Number = 3 },
+					new Cell() { Number = 4 },
+					new Cell() { Number = 5 },
+				},
+
+				new List<Cell>() {
+					new Cell() { Number = 1 },
+					new Cell() { Number = 2 },
+					new Cell() { Number = 3 },
+					new Cell() { Number = 4 },
+					new Cell() { Number = 5 },
+				},
+
+				new List<Cell>() {
+					new Cell() { Number = 1 },
+					new Cell() { Number = 2 },
+					new Cell() { Number = 3 },
+					new Cell() { Number = 4 },
+					new Cell() { Number = 5 },
+				},
+
+				new List<Cell>() {
+					new Cell() { Number = 1 },
+					new Cell() { Number = 2 },
+					new Cell() { Number = 3 },
+					new Cell() { Number = 4 },
+					new Cell() { Number = 5 },
+				},
+			}
+		};
+
+		Assert.Equal(expected, Board.Parse(board));
+	}
 }
