@@ -14,6 +14,7 @@ The codebase is split into a few different projects to keep logic isolated and r
 - `Cmd` is the main console app entrypoint, which generates the CLI
 - `Data` manages loading inputs and some data casting of those inputs
 - `Submarine` contains the business logic related to controlling the submarine and its subsystems
+- `Bingo` contains the logic to play games of Bingo.
 
 ## Development
 
