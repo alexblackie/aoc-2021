@@ -20,7 +20,7 @@ public class Game
 		Boards.Add(board);
 	}
 
-	public Board? Draw(List<int> numbers)
+	public GameResult? Draw(List<int> numbers)
 	{
 		foreach (var number in numbers)
 		{
@@ -28,7 +28,14 @@ public class Game
 			{
 				board.MarkCell(number);
 				// if we get a bingo, return the first board that bingos
-				if (board.IsBingo()) return board;
+				if (board.IsBingo())
+				{
+					var result = new GameResult();
+					result.WinningDraw = number;
+					result.WinningBoard = board;
+
+					return result;
+				}
 			}
 		}
 

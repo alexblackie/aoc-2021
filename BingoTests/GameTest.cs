@@ -99,8 +99,10 @@ public class GameTest
 
 		var game = new Game();
 		game.AddBoards(boards);
+		var result = game.Draw(draws);
 
-		Assert.Equal(boards[2], game.Draw(draws));
+		Assert.Equal(boards[2], result.WinningBoard);
+		Assert.Equal(24, result.WinningDraw);
 	}
 
 	[Fact]
