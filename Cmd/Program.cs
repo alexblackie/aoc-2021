@@ -37,5 +37,17 @@ class Program
 		var powerDiagnostic = PowerDiagnostic.Parse(binaryDiagnostic);
 		Console.WriteLine($"Day 3: {powerDiagnostic.GammaRate * powerDiagnostic.EpsilonRate}");
 		// I'm skipping Part 2 because it's insufferable.
+
+		// Day 4
+		var (day4Draws, day4BoardInputs) = ingestor.ReadBingoGame("Data/Inputs/Day4.txt");
+		var day4Bingo = new Bingo.Game();
+		var day4Boards = day4BoardInputs.Select(input => Bingo.Board.Parse(input)).ToList();
+		day4Bingo.AddBoards(day4Boards);
+		Bingo.GameResult day4Result = day4Bingo.Draw(day4Draws);
+
+		if (day4Result != null)
+		{
+			Console.WriteLine($"Day 4: {day4Result.Score()}");
+		}
 	}
 }
