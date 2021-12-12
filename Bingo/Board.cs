@@ -59,4 +59,19 @@ public class Board : IEquatable<Board>
 
 		return true;
 	}
+
+	public int UnmarkedSum()
+	{
+		int count = 0;
+
+		foreach (var row in Cells)
+		{
+			foreach (var cell in row)
+			{
+				if (!cell.Marked) count += cell.Number;
+			}
+		}
+
+		return count;
+	}
 }

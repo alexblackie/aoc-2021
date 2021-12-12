@@ -216,4 +216,25 @@ public class BoardTest
 
 		Assert.Equal(expected, Board.Parse(board));
 	}
+
+
+	[Fact]
+	public void TestBoardUnmarkedSum()
+	{
+		var board = new Board()
+		{
+			Cells = new List<List<Cell>>()
+			{
+				new List<Cell>() {
+					new Cell() { Number = 1 },
+					new Cell() { Number = 2, Marked = true },
+					new Cell() { Number = 3 },
+					new Cell() { Number = 4 },
+					new Cell() { Number = 5, Marked = true },
+				},
+			}
+		};
+
+		Assert.Equal(8, board.UnmarkedSum());
+	}
 }
